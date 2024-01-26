@@ -454,11 +454,9 @@ function sortByAsc(arr) {
         minValue = j;
       }
     }
-    const tempVariable = newArr[i];
-    newArr[i] = newArr[minValue];
-    newArr[minValue] = tempVariable;
+    [newArr[i], newArr[minValue]] = [newArr[minValue], newArr[i]];
   }
-  return arr;
+  return newArr;
 }
 
 /**
